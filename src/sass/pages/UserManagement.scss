@@ -1,63 +1,148 @@
 .user-management {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+  width: 80%;
+
+  p {
+    color: #212934;
+    @include text;
+    margin-bottom: 20px;
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  h1 {
+    @include primary-heading;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    @include subheading(#5f6b7a);
+    margin-bottom: 20px;
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+      @include primary-button {
+        padding: 15px 35px;
+      }
+    }
+
+    .search {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+
+      input {
+        @include inputs;
+        width: 381px;
+        padding: 15px 15px 15px 40px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid #cfd6de;
+      }
+
+      .search-icon {
+        color: #8895a7;
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .users-table {
+    width: 100%;
+    border: 1px solid #cfd6de;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 40px;
-    width: 80%;
+    align-items: center;
+    box-shadow: 0px 10px rgba(0,0,0,0.1);
+  table {
+    width: 100%;    
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 30px;
 
-    p {
-       color: #212934;
-       @include text; 
-       margin-bottom: 20px;
-    }
 
-    h1 {
-        @include primary-heading;
-        margin-bottom: 40px;
-    }
+    thead {
+      background-color: #0041b6;
+      border: 1px solid #0041b6;      
+      color: #fff;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 600;
+      text-align: left;
+      border-left: 1px solid #cfd6de;
 
-    h3 {
-        @include subheading(#5F6B7A);
-        margin-bottom: 20px;
-    }
-
-    .search-bar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-
-        button {
-            @include primary-button{
-                padding: 15px 35px;
-            }
+      tr {
+        th {            
+          padding: 10px;
+          border-right: 1px solid #cfd6de;
         }
-
-        .search {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            input {
-                @include inputs;
-                width: 381px;
-                padding: 15px 15px 15px 40px;
-                border-radius: 10px;
-                outline: none;
-                border: 1px solid #CFD6DE;
-            }
-
-            .search-icon {
-                    color: #8895A7;
-                    position: absolute;
-                    top: 12px;
-                    left: 10px;
-                    cursor: pointer;
-            }
-            
-        }
+      }
     }
+
+    tbody {
+      tr {
+        td {
+          padding: 10px;
+          color: #003098;
+          font-size: 16px;
+          line-height: 27px;
+          text-align: left;
+          font-weight: 400;
+          border-left: 1px solid #cfd6de;
+
+          .table-icons {
+            color: #8895a7;
+            cursor: pointer;
+
+            &:last-child {
+              color: #6ebc1a;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    button {
+        border: none;
+        outline: none;
+        background-color: #fff;
+        margin-right: 20px;
+        color: #8895a7;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    span {
+        color: #8895a7;
+        @include text;
+        margin-right: 20px;
+    }
+  }
+}
 }
