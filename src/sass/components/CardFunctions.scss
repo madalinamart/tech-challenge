@@ -1,0 +1,29 @@
+.user-functions {
+  margin: 40px 0px;
+  width: 100%;
+
+  .function {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 40px;
+    text-decoration: none;
+
+    &:hover {
+      background: linear-gradient(to right, #0041b6 0%, #0055d4 100%);
+      border-right: 3px solid #fff;
+    }
+
+    &:active {
+      background: linear-gradient(to right, #0041b6 0%, #0055d4 100%);
+      border-right: 3px solid #fff;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 17px;
+      margin-left: 23px;
+    }
+  }
+}

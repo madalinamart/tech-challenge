@@ -1,0 +1,31 @@
+//IMPORT FONTS
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+//IMPORT PARTIALS
+
+@import 'partials/variables', 'partials/mixins';
+
+
+//IMPORT COMPONENTS
+
+@import 'components/Card.scss', 'components/CardFunctions.scss';
+
+//IMPORT PAGES
+
+@import 'pages/App.scss', 'pages/Login.scss', 'pages/Home.scss','pages/UserManagement.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+html {
+    height: 100vw;
+    overflow: hidden;
+}
+
+body {
+    height: 100vw;
+    overflow: hidden;
+}

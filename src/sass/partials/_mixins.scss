@@ -1,0 +1,51 @@
+@mixin primary-heading {
+    font-size: 48px;
+    color: #003098;
+    line-height: 72px;
+    font-weight: 900;
+}
+
+@mixin secondary-heading {
+    font-size: 32px;
+    color: #212934;
+    line-height: 48px;
+    font-weight: 700;
+}
+
+@mixin subheading($text-color) {
+    font-size: 24px;
+    color: $text-color;
+    line-height: 36px;
+    font-weight: 400;
+}
+
+@mixin text {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+@mixin inputs {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@mixin primary-button {
+    outline: none;
+    color: #fff;
+    border: none;
+    background: $primary-color;    
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 17px;
+    @content;
+
+    &:hover {
+      background-color: $hover-button;
+    }
+
+    &:active {
+      color: $pressed-button;
+    }
+}

@@ -1,0 +1,63 @@
+.user-management {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    width: 80%;
+
+    p {
+       color: #212934;
+       @include text; 
+       margin-bottom: 20px;
+    }
+
+    h1 {
+        @include primary-heading;
+        margin-bottom: 40px;
+    }
+
+    h3 {
+        @include subheading(#5F6B7A);
+        margin-bottom: 20px;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        button {
+            @include primary-button{
+                padding: 15px 35px;
+            }
+        }
+
+        .search {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input {
+                @include inputs;
+                width: 381px;
+                padding: 15px 15px 15px 40px;
+                border-radius: 10px;
+                outline: none;
+                border: 1px solid #CFD6DE;
+            }
+
+            .search-icon {
+                    color: #8895A7;
+                    position: absolute;
+                    top: 12px;
+                    left: 10px;
+                    cursor: pointer;
+            }
+            
+        }
+    }
+}
