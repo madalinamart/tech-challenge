@@ -49,3 +49,28 @@
       color: $pressed-button;
     }
 }
+
+@mixin secondary-button {
+    border-radius: 10px;
+    border: 2px solid #3985E5;
+    padding: 15px;
+    background-color: #fff;
+    color: #3985E5;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    @content;
+
+    &:active {
+        outline: none;
+        color: #fff;
+        border: none;
+        background: $primary-color;    
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 17px;
+    }
+   
+}

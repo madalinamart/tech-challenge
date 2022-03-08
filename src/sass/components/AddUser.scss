@@ -1,0 +1,116 @@
+.add-user-wrapper {
+    background-image: url('../../images/background2.png');
+    width: 80%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    
+
+    p {
+        color: #212934;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        margin-bottom: 20px;
+       
+        span {
+            color: #8895A7;
+        }
+    }
+
+    h1 {
+        @include primary-heading;
+        margin-bottom: 40px;
+    }
+    
+    span {
+        color: $danger;
+    }
+
+    .mandatory {        
+        color: $danger;
+        font-style: italic;        
+    }
+
+    .add-user-form {
+        .input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            @include text;
+            color: #212934;
+            margin-bottom: 10px;
+        }
+        
+        input {
+            @include inputs;
+            width: 381px;
+            border-radius: 10px;
+            border: 1px solid #CFD6DE;
+            padding: 15px 20px;
+        }
+
+        input[type="date"] {         
+            color: #8895A7;            
+            border: 1px solid #CFD6DE;
+            border-radius: 10px;
+            width: 206px;       
+            text-transform: uppercase;            
+        }        
+       
+        .inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+        }
+
+        .role-gender {
+            display: flex;
+            flex-direction: row;
+            grid-gap: 40px;
+
+            select {
+                padding: 15px 20px;
+                border: 1px solid #CFD6DE;
+                border-radius: 10px;
+                background-color: #fff;
+                @include inputs;
+                color: #5F6B7A;
+
+                option {
+                    @include inputs;
+                    color: #5F6B7A;
+                }
+            }
+        }
+
+        .submit {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: flex-end;
+
+            .buttons {
+                margin-left: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 40px;
+                width: 381px;
+
+                button {
+                    @include secondary-button{
+                    height: 50px;
+                    }
+
+
+                    &:nth-child(2) {
+                        @include primary-button;
+                    }
+                }
+            }
+        }
+    }
+    
+}
