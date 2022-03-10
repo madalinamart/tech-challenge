@@ -107,42 +107,26 @@
           line-height: 27px;
           text-align: left;
           font-weight: 400;
-          border-left: 1px solid #cfd6de;
+          border-left: 1px solid #cfd6de;      
+        }
+        .icons {
+          display: flex;
+          flex-direction: row;
+          
+        .table-icons {
+          color: #8895a7;
+          cursor: pointer;
 
-          .table-icons {
-            color: #8895a7;
-            cursor: pointer;
-
-            &:last-child {
-              color: #6ebc1a;
-            }
+          &:last-child {
+            color: #6ebc1a;
           }
         }
+       }
       }
     }
   }
-
   .pagination {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 20px;
-    
-    button {
-        border: none;
-        outline: none;
-        background-color: #fff;
-        margin-right: 20px;
-        color: #8895a7;
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    span {
-        color: #8895a7;
-        @include text;
-        margin-right: 20px;
-    }
+    margin: 20px auto;
   }
 }
 }

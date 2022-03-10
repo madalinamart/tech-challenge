@@ -1,127 +1,120 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import { useTable, useGlobalFilter, usePagination } from 'react-table';
-import { COLUMNS } from './tableColumns';
-import GlobalFilter from './GlobalFilter';
-import { Link } from 'react-router-dom';
-import {getEmployees} from '../api/employees'
+import { SearchNormal, Edit2, TickCircle, Slash } from 'iconsax-react';
+import React, { useEffect, useState} from 'react'
+import { getUsers, deleteUser } from '../api/api';
+import {Link} from 'react-router-dom'
+import { Pagination } from "react-custom-pagination";
 
 
 
-const UsersEdit = () => {
-  const [employees, setEmployees] = useState([]);
- 
- 
- useEffect(() => {
-   getAllEmployees();
- }, []);
 
- const getAllEmployees = async () => {
-   let response = await getEmployees();
-   setEmployees(response.data)
- }
+const UserManagement = () => {
+  const [employees,setEmployees ] = useState([]);
+  const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
 
-  const columns = useMemo(() => COLUMNS, []);
-  const data =  employees;
- 
+  useEffect(() => {
+      getAllUsers()     
+  },[])
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    page,
-    nextPage,
-    canNextPage,
-    canPreviousPage,
-    previousPage,
-    pageOptions,
-    gotoPage,
-    pageCount,
-    prepareRow,
-    state,
-    setGlobalFilter,
-  } = useTable(
-    {
-      columns,
-      data,
-      initialState: { pageSize: 9 },
-    },
-    useGlobalFilter,
-    usePagination
-  );
+  const getAllUsers = async () => {
+      const response = await getUsers();
+      setEmployees(response.data);
+  }
 
-  const { globalFilter, pageIndex } = state;
+  const deleteUserData = async (id) => {
+      await deleteUser(id);
+      getAllUsers();
+  }
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = employees.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (number) => {
+    setCurrentPage(number);
+  };
+
 
   return (
-   
     <div className='user-management'>
       <p>Users</p>
-      <h1> Users Management</h1>
-      <h3>Search user</h3>
+      <h1> Users Management</h1>  
+      <h3>Search user</h3>  
       <div className='search-bar'>
-        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-         <Link to='add-user'>
+        <div className='search'>
+          <input type='search' placeholder='Search user' onChange ={e => {setSearch(e.target.value)}}/> 
+          <SearchNormal className='search-icon'/>        
+        </div>      
+         <Link to='/add'>
          <button>+ADD USER</button>    
          </Link>     
       </div>
       <p>
-        Users: <span>110</span>
+        Users: <span>{employees.length}</span>
       </p>
       <div className='users-table'>
-        <table {...getTableProps()}>
-          <thead>
-            {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
-                    {column.render('Header')}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody {...getTableBodyProps()}>
-            {page.map((row) => {
-              prepareRow(row);
-              return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map((cell) => {
-                    return (
-                      <td {...cell.getCellProps()}>
-                        {cell.render('Cell')}                                                 
-                      </td>                         
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div className='pagination'>
-          <button onClick={() => gotoPage(0)}>{'<<'}</button>
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            {'<'}
-          </button>
-          <span>
-            Page{' '}
-            <span>
-              {pageIndex + 1} of {pageOptions.length}
-            </span>{' '}
-          </span>
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
-            {'>'}
-          </button>
-          <button
-            onClick={() => gotoPage(pageCount - 1)}
-            disabled={!canNextPage}
-          >
-            {'>>'}
-          </button>
-        </div>
-      </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+           {               
+               currentPosts.filter((val) => {
+                 if (search == '') {
+                   return val
+                 } else if(val.name.toLowerCase().includes(search.toLowerCase())){
+                   return val
+                 }
+               }).map(employee => (
+                    <tr key={employee.id}>
+                        <td>{employee.id}</td>
+                        <td>{employee.name}</td>
+                        <td>{employee.email}</td>
+                        <td>{employee.role}</td>
+                        <td>{employee.gender}</td>
+                        <td>{employee.date}</td>
+                        <td>{employee.nationality}</td>
+                        <td className='icons'>
+                            <Link className='table-icons' to={`/edit/${employee.id}`}>
+                            <Edit2 />
+                            </Link>
+                            <Slash className='table-icons' onClick={() => deleteUserData(employee.id)}/>
+                            <TickCircle className='table-icons'/>
+                        </td>                        
+                    </tr>
+               ))               
+           }
+        </tbody>
+    </table>
 
+<div className='pagination'>
+    <Pagination
+          totalPosts={employees.length}
+          postsPerPage={postsPerPage}
+          paginate={paginate}
+          showFirst= {true}
+          showLast= {true}
+          showFirstText='<<'
+          showLastText='>>'
+          color='#8895A7'
+          bgColor='#fff'
+          selectColor='#fff'
+        /> 
+        </div>
+    </div>     
     </div>
-  
+   
   );
 };
 
-export default UsersEdit;
+export default UserManagement;

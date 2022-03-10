@@ -32,6 +32,28 @@
         font-style: italic;        
     }
 
+    .user-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #CFD6DE;
+        margin-bottom: 20px;
+
+        .name, .id {
+            display: flex;
+            flex-direction: row;
+
+            h3 {
+                @include subheading(#0041b6);
+                font-weight: 500;
+
+                &:last-child{
+                    @include subheading(#5F6B7A);
+                }
+            }
+        }
+    }
+
     .add-user-form {
         .input {
             display: flex;

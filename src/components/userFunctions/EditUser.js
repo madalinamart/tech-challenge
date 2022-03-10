@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {addUser} from '../../api/api'
-import { useNavigate } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { editUser, getUsers } from '../../api/api'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const initialValues = {
     firstName: '',
@@ -13,12 +13,22 @@ const initialValues = {
     password:''
 }
 
-const AddUser = () => {
+const EditUser = () => {
 
     const [employee, setEmployee] = useState(initialValues)
-    const [selectedFile, setSelectedFile] = useState('')
-    const {firstName, lastName, email, role, gender, nationality, date, password, image} = employee
-const navigate = useNavigate();
+    const {firstName, lastName, email, role, gender, nationality, date,password} = employee
+    const {id} = useParams();
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        loadUserData();
+    },[]);
+
+    const loadUserData = async () => {
+        const response = await getUsers(id);
+        setEmployee(response.data);
+    }
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -27,40 +37,45 @@ const navigate = useNavigate();
             [name]: value
         })
     }
-   
 
-
-    const addUserDetails = async () => {    
-        const fd = new FormData()
-        fd.append('selectedFile', selectedFile)
-        const newEmployee = {name: firstName + ' ' + lastName, email : email, role: role, gender: gender, date: date, nationality: nationality, password: password, image: selectedFile}    
-        await addUser(newEmployee); 
+    const editUserDetails = async () => {
+        const newEmployee = {name: firstName + ' ' + lastName, email : email, role: role, gender: gender, date: date, nationality: nationality, password: password}
+        await editUser(id,newEmployee);
         navigate('/UserManagement')
     }
 
-    const handleSubmit = e => {
-      e.preventDefault();
-      addUserDetails();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        editUserDetails();
     }
 
     const resetInputs = () => {
-      setEmployee({
-      firstName: "",
-      lastName:"",
-      email: "",
-      role:"",
-      gender:"",
-      nationality:"",
-      date:"",
-      password:""
-    })
-    }
+        setEmployee({
+        firstName: "",
+        lastName:"",
+        email: "",
+        role:"",
+        gender:"",
+        nationality:"",
+        date:"",
+        password:""
+      })
+      }
 
-   
   return (      
     <div className='add-user-wrapper'>
-      <p><span>User &gt;</span> Add User</p>
-      <h1> Add User </h1>
+      <p><span>User &gt;</span> Edit User</p>
+      <h1> Edit User </h1>
+      <div className='user-info'>
+          <div className='name'>
+          <h3>Edit User: </h3> 
+          <h3>{employee.name}</h3>
+          </div>
+          <div className='id'>
+          <h3>User ID:</h3> 
+          <h3>{employee.id}</h3>
+          </div>
+      </div>
       <p className='mandatory'>*Mandatory fields</p>
       <form className='add-user-form' onSubmit={handleSubmit}>
           <div className='inputs'>
@@ -110,18 +125,13 @@ const navigate = useNavigate();
           <input type='text' name='nationality' id='nationality' required placeholder='Romanian (RO)' value={nationality} onChange={handleChange}/>
           </div>
           
-          <div className='input'>
-          <label htmlFor='image'>Avatar image:</label>
-          <input type='file' name='image' value={image} onChange={(e) => setSelectedFile(e.target.value)}/>
           </div>
-
+          
+          <div className='submit'>
           <div className='input'>
           <label htmlFor='date'>Birth Date</label>
           <input type='date' name='date' value={date} onChange={handleChange}/>
           </div>
-          </div>
-          
-          <div className='submit'>
           <div className='buttons'>
           <button onClick={() => resetInputs()}>Reset Form</button>
           <button type='submit'>SUBMIT</button>
@@ -132,4 +142,4 @@ const navigate = useNavigate();
   )
 }
 
-export default AddUser
+export default EditUser
