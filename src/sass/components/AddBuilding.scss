@@ -1,0 +1,132 @@
+.add-building-wrapper {
+    background-image: url('../../images/background2.png');
+    width: 80%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+
+    .edit {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 43px;
+
+        h3 {
+            @include subheading(#212934);
+
+            &:last-child {
+                @include subheading(#8895A7);
+            }
+        }
+    }
+
+    p {
+        color: #212934;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        margin-bottom: 20px;
+       
+        span {
+            color: #8895A7;
+        }
+    }
+
+    h1 {
+        @include primary-heading;
+        margin-bottom: 40px;
+    }
+    
+    span {
+        color: $danger;
+    }
+
+    .mandatory {        
+        color: $danger;
+        font-style: italic;        
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            margin-right: 100px;
+            border-radius: 10px;
+            box-shadow: 0px, 10px rgba(0,0,0,0.2);
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-right: 60px;
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            @include text;
+            color: #212934;
+            margin-bottom: 10px;
+        }
+        
+        input, textarea {
+            @include inputs;
+            width: 381px;
+            border-radius: 10px;
+            border: 1px solid #CFD6DE;
+            padding: 15px 20px;
+        }
+
+      
+
+        .quantity {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            border: 1px solid #e1e7ec;
+            border-radius: 10px;
+            width: 190px;
+            padding: 10px;
+            margin-bottom: 20px;
+
+            button { 
+                @include primary-button{
+                    border-radius: 3px;                              
+                    padding: 5px 12px;
+                }
+            }
+
+            p {
+                @include inputs;
+                margin: auto 0px;
+                color: #8895A7;
+            }
+        }
+
+        .buttons {
+            margin-left: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            width: 381px;
+
+            button {
+                @include secondary-button{
+                height: 50px;
+                }
+
+
+                &:nth-child(2) {
+                    @include primary-button;
+                }
+            }
+        }
+    }
+  }
+}

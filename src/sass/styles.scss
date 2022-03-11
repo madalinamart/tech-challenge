@@ -8,11 +8,11 @@
 
 //IMPORT COMPONENTS
 
-@import 'components/Card.scss', 'components/CardFunctions.scss', 'components/AddUser.scss';
+@import 'components/Card.scss', 'components/CardFunctions.scss', 'components/AddUser.scss', 'components/BuildingCard.scss', 'components/AddBuilding.scss';
 
 //IMPORT PAGES
 
-@import 'pages/App.scss', 'pages/Login.scss', 'pages/Home.scss','pages/UserManagement.scss';
+@import 'pages/App.scss', 'pages/Login.scss', 'pages/Home.scss','pages/UserManagement.scss', 'pages/BuildingManagement.scss';
 
 * {
     margin: 0;
@@ -28,4 +28,5 @@ html {
 body {
     height: 100vw;
     overflow: hidden;
+    text-decoration: none;
 }
