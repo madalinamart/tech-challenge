@@ -112,7 +112,7 @@ const navigate = useNavigate();
           
           <div className='input'>
           <label htmlFor='image'>Avatar image:</label>
-          <input type='file' name='image' value={image} onChange={(e) => setSelectedFile(e.target.value)}/>
+          <input type='file' name='image' value={image} onChange={(e) => setSelectedFile(e.target.value)} />
           </div>
 
           <div className='input'>
