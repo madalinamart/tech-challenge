@@ -15,10 +15,10 @@ const AdminFunctions = () => {
         <Buliding />
         <p>BUILDING MANAGEMENT</p>
     </Link>
-    <div className='function'>
+    <Link to='/OfficeManagement' className='function'>
         <Status />
         <p>OFFICE MANAGEMENT</p>
-    </div>
+    </Link>
     <div className='function'>
         <NotificationStatus />
         <p>OFFICE STATUS</p>

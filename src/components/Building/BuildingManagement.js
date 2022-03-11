@@ -54,7 +54,7 @@ const deleteBuildingData = async (id) => {
                 <div className='floors'>
                     <span>{building.floors} floors</span>
                 <div className='icons'>
-                    <Link  to={`/edit-building/${building.id}`}><Edit2 className='icon'/></Link>
+                    <Link  className='icon' to={`/edit-building/${building.id}`}><Edit2 /></Link>
                     <Slash onClick={() => deleteBuildingData(building.id)}/>
                 </div>
                 </div>

@@ -82,6 +82,15 @@
             padding: 15px 20px;
         }
 
+        select {
+            border-radius: 10px;
+            border: 1px solid #CFD6DE;
+            padding:15px;
+            width: 180px;
+            color: #5F6B7A;
+            @include inputs;
+        }
+
       
 
         .quantity {
@@ -126,6 +135,11 @@
                     @include primary-button;
                 }
             }
+        }
+
+        .office-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
   }
