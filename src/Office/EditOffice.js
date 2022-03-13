@@ -67,7 +67,7 @@ const EditOffice = () => {
     }
 
       const editOfficeDetails = async () => {
-        const newOffice = {name: name, building: building, floor: floor, totalDesks: clicks, usableDesks: freeDesks, administrator: adminname}
+        const newOffice = {name: name, building: building, floor: floor, totalDesks: clicks, usableDesks: freeDesks, administrator: adminname, usedDesks : office.usedDesks , users: office.users}
         await editOffice(id,newOffice);
         navigate('/OfficeManagement')
     }

@@ -43,7 +43,7 @@ const AddOffice = () => {
 
     
   const addOfficeDetails = async () => {   
-    const newOffice = {name: name, building: building, floor: floor, totalDesks: clicks, usableDesks: freeDesks, administrator: adminname}    
+    const newOffice = {name: name, building: building, floor: floor, totalDesks: clicks, usableDesks: freeDesks, administrator: adminname, usedDesks: 0, users: []}    
     await addOffice(newOffice); 
     navigate('/OfficeManagement')
 }

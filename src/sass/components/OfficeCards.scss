@@ -1,0 +1,67 @@
+.office-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .office-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        border: 1px solid #CFD6DE;
+        border-radius: 10px;
+        padding: 20px;
+        text-decoration: none;
+        width: 100%;
+        cursor: pointer;
+
+        .info {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+
+            span {
+                @include text;
+                color: #fff;
+                padding: 3px 20px;
+                background: #0199B1;
+                border-radius: 20px;
+                margin-bottom: 20px; 
+
+                &:first-child {
+                    @include text;
+                    color: #fff;
+                    padding: 5px;
+                    background: #56A113;
+                    margin-right: 5px;
+                }
+            }
+
+            h3 {
+                @include subheading(#212934);
+            }
+
+            p {
+                @include text;
+                color: #8895A7;
+
+                &:last-child {
+                    color: #5F6B7A;
+                }
+            }
+        }
+    }
+    .pagination {
+        position: fixed;
+        bottom: 40px;
+        width: 100%;
+        justify-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

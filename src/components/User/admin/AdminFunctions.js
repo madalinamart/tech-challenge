@@ -19,14 +19,14 @@ const AdminFunctions = () => {
         <Status />
         <p>OFFICE MANAGEMENT</p>
     </Link>
-    <div className='function'>
+    <Link to='/OfficeStatus' className='function'>
         <NotificationStatus />
         <p>OFFICE STATUS</p>
-    </div>
-    <div className='function'>
+    </Link>
+    <Link to='/DeskAssignment' className='function'>
         <UserTag />
         <p>DESK ASSIGNMENT</p>
-    </div>
+    </Link>
     <div className='function'>
         <House />
         <p>REQUEST TO WORK REMOTE</p>

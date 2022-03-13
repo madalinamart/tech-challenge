@@ -1,0 +1,116 @@
+.desk-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    width: 80%;
+
+    p {
+        @include inputs;
+        color: #212934;
+    }
+
+    h1 {
+        @include primary-heading;
+        margin-bottom: 40px;
+    }
+
+    button {
+        @include primary-button{
+            padding: 15px 55px;
+        }
+    }
+
+    form {
+        width: 100%;
+        padding: 40px;
+        border: 1px solid #cfd6d6;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px, 1px
+rgba(0, 0, 0, 0.15);
+
+        h3 {
+            @include subheading(#212934);
+            margin-bottom: 20px;
+        }
+
+        label {
+            @include text;
+            color: #5f6b7a;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 240px;
+            padding: 10px 16px 10px 40px;
+            border: 1px solid #cfd6d6;
+            border-radius: 10px;
+        }
+
+        select {
+            border: 1px solid #cfd6d6;
+            border-radius: 10px;
+            @include inputs;
+            color: #5f6b7a;
+            padding: 15px 20px;
+            margin-right: 20px;
+        }
+
+        .desk-assignment {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 40px;
+
+            .building-info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 45px;
+                border-right: 1px solid #cfd6d6;
+
+                .input {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .user {
+                display: flex;
+                flex-direction: column;
+                padding-left: 45px;
+
+                p {
+                    @include text;
+                    color: #212934;
+                    margin-top: 20px;
+                }
+
+                .search-bar {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .search {
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+
+                        .search-icon {
+                            color: #cfd6d6;
+                            position: absolute;
+                            top: 44px;
+                            left: 10px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

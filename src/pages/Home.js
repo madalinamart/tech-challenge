@@ -10,6 +10,9 @@ import EditBuilding from '../components/Building/BuildingFunctions/EditBuilding'
 import OfficeManagement from '../Office/OfficeManagement'
 import AddOffice from '../Office/AddOffice'
 import EditOffice from '../Office/EditOffice'
+import OfficeStatus from '../Office/OfficeStatus'
+import Office from '../Office/Office'
+import DeskAssignment from '../Desk/DeskAssignment'
 
 
 
@@ -31,6 +34,9 @@ const Home = () => {
       <Route exact path='OfficeManagement' element={<OfficeManagement />} />
       <Route exact path='/add-office' element={<AddOffice />} />
       <Route exact path='/edit-office/:id' element={<EditOffice />} />
+      <Route exact path='/OfficeStatus' element={<OfficeStatus />} />
+      <Route exact path='/Office/:id' element={<Office />} />
+      <Route exact path='/DeskAssignment' element={<DeskAssignment />} />
     </Routes>
     </div>
     </BrowserRouter>     

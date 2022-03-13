@@ -1,0 +1,140 @@
+.office-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    width: 80%;
+
+    h1 {
+        @include primary-heading;
+    }
+
+    button {
+        @include primary-button{
+            padding: 15px 40px;
+        }
+    }
+
+    p {
+        color: #212934;
+        @include text;
+        margin-bottom: 20px;
+    
+        span {
+          font-weight: 400;
+          color: #8895A7;
+        }
+    }
+
+    h3 {
+        @include subheading(#8895A7);
+        margin-bottom: 40px;
+
+        span {
+            color: #212934;
+        }
+    }
+
+    h2 {
+        @include secondary-heading;
+        margin-bottom: 20px;
+
+        span {
+            color: #8895A7;
+            font-weight: 400;
+        }
+    }
+
+    .office-info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        span {
+            @include text;
+            color: #fff;
+            padding: 3px 20px;
+            background: #0199B1;
+            border-radius: 20px;
+            margin-bottom: 20px; 
+
+            &:first-child {
+                @include text;
+                color: #fff;
+                padding: 5px;
+                background: #56A113;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .general {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        grid-gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 44px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #017494;
+            
+            p {
+                @include text;
+                color: #fff;
+                font-weight: 600;
+            }
+
+            h1 {
+                @include primary-heading;
+                color: #fff;
+            }
+
+            &:nth-child(2) {
+                background-color: #0199B1;
+            }
+
+            &:nth-child(3) {
+                background-color: #CE6C04;
+            }
+
+            &:nth-child(4) {
+                background-color: #40870D;
+            }
+
+            &:last-child {
+                background-color: #205A04;
+            }
+        }
+    }
+
+    .users {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        .user {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+
+            p {
+               margin: auto 0px auto 10px;
+            }
+        }
+    }
+}

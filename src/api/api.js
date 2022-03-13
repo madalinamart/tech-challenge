@@ -38,7 +38,7 @@ export const deleteBuilding = async (id) => {
     return await axios.delete(`${urlBuildings}/${id}`);
 }
 
-const urlOffices = 'http://localhost:3006/offices'
+const urlOffices = `http://localhost:3006/offices`
 
 export const getOffices = async (id) => {
     id = id || '';
