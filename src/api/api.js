@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+export default axios.create({
+    baseURL: 'http://localhost:3006'
+});
+
 const url = 'http://localhost:3006/employees'
 
 export const getUsers = async (id) => {
