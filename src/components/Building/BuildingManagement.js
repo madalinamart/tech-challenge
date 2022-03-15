@@ -3,7 +3,9 @@ import {SearchNormal} from 'iconsax-react'
 import { Link } from 'react-router-dom'
 import building1 from '../../images/buildings/building1.png'
 import { Edit2, Slash } from 'iconsax-react'
-import { deleteBuilding, getBuildings } from '../../api/api';
+import { getBuildings, deleteBuilding } from '../../api/api';
+
+
 
 const BuildingManagement = () => {
 
@@ -20,8 +22,8 @@ const getAllBuildings = async () => {
 }
 
 const deleteBuildingData = async (id) => {
-  await deleteBuilding(id);
-  getAllBuildings();
+   await deleteBuilding(id)
+  getAllBuildings()  
 }
 
 
@@ -44,11 +46,11 @@ const deleteBuildingData = async (id) => {
           buildings.filter((val) => {
             if (search == '') {
               return val
-            } else if(val.name.toLowerCase().includes(search.toLowerCase())){
+            } else if(val.buildingName.toLowerCase().includes(search.toLowerCase())){
               return val
             }
           }).map(building => (
-            <div className='card'>
+            <div className='card' key={building.id}>
             <img src={building1} alt='building' />
             <div className='building-info'>
                 <div className='floors'>

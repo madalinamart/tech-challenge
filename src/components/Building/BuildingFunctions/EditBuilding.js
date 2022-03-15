@@ -3,6 +3,7 @@ import mainBuilding from '../../../images/buildings/mainBuilding.png'
 import { useNavigate, useParams} from 'react-router-dom'
 import { editBuilding, getBuildings } from '../../../api/api'
 
+
 const initialValues = {
  name:'',
  address:'',
@@ -53,7 +54,7 @@ const EditBuilding = () => {
 
       const editBuildingDetails = async () => {
         const newBuilding = {name: name , address: address, floors: clicks}
-        await editBuilding(id,newBuilding);
+        editBuilding(id, newBuilding)            
         navigate('/BuildingManagement')
     }
 
@@ -63,7 +64,7 @@ const EditBuilding = () => {
       <h1> Edit Building </h1>
       <div className='edit'>
       <h3>Edit Building: </h3>
-      <h3>{building.name}</h3>
+      <h3>{building.id}</h3>
       </div>
       <p className='mandatory'>*Mandatory fields</p>
 

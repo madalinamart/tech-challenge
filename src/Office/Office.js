@@ -54,7 +54,7 @@ const Office = () => {
         </div>
       </div>
       <h3>
-        Office administrator: <span>Alin Ionescu</span>
+        Office administrator: <span>{office.administrator}</span>
       </h3>
       <h2>
         Users <span>({office.users?.length})</span>

@@ -21,6 +21,8 @@ export const deleteUser = async (id) => {
 
 const urlBuildings = 'http://localhost:3006/buildings'
 
+
+
 export const getBuildings = async (id) => {
     id = id || '';
     return await axios.get(`${urlBuildings}/${id}`)
@@ -35,7 +37,7 @@ export const editBuilding = async(id,building) => {
 }
 
 export const deleteBuilding = async (id) => {
-    return await axios.delete(`${urlBuildings}/${id}`);
+    return await axios.delete(`${urlBuildings}`,id);
 }
 
 const urlOffices = `http://localhost:3006/offices`

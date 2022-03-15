@@ -1,0 +1,118 @@
+.remote-wrapper {
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+  width: 80%;
+  position: relative;
+
+  p {
+    color: #212934;
+    @include text;
+    margin-bottom: 20px;
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  h1 {
+    @include primary-heading;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    @include subheading(#5f6b7a);
+    margin-bottom: 20px;
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+      @include primary-button {
+        padding: 15px 35px;
+      }
+    }
+
+    .search {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+
+      input {
+        @include inputs;
+        width: 381px;
+        padding: 15px 15px 15px 40px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid #cfd6de;
+      }
+
+      .search-icon {
+        color: #8895a7;
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  .requests-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+
+    .request {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #cfd6de;
+        border-radius: 10px;   
+        position: relative;
+        
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+
+            h4 {
+                @include text;
+                color: #212934;
+                margin-left: 10px;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            @include text;
+            color: #8895a7;
+            margin-bottom: 20px;
+
+            &:last-child {
+                color: #3985e5;
+                text-align: center;
+                font-weight: 700;
+                position: absolute;
+                bottom: 0px;
+                left: 125px;
+            }
+        }
+    }
+}
+
+.pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+}
+}

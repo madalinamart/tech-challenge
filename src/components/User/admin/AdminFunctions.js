@@ -27,23 +27,22 @@ const AdminFunctions = () => {
         <UserTag />
         <p>DESK ASSIGNMENT</p>
     </Link>
-    <div className='function'>
+    <Link to='/RequestRemote' className='function'>
         <House />
         <p>REQUEST TO WORK REMOTE</p>
-    </div>
-    <div className='function'>
+    </Link>
+    <Link to='/Remotes' className='function'>
         <MessageQuestion />
         <p>REMOTE WORK APPROVAL</p>
-    </div>
-    <div className='function'>
+    </Link>
+    <Link to='/Users' className='function'>
         <People />
         <p>USER STATUS</p>
-    </div>
+    </Link>
     <div className='function'>
         <Login />
         <p>LOG OUT</p>
-    </div> 
-  
+    </div>  
 </div>
 
   )

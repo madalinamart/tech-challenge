@@ -8,11 +8,11 @@
 
 //IMPORT COMPONENTS
 
-@import 'components/Card.scss', 'components/CardFunctions.scss', 'components/AddUser.scss', 'components/BuildingCard.scss', 'components/AddBuilding.scss', 'components/OfficeCards.scss', 'components/DeskAssignment.scss';
+@import 'components/Card.scss', 'components/CardFunctions.scss', 'components/AddUser.scss', 'components/BuildingCard.scss', 'components/AddBuilding.scss', 'components/OfficeCards.scss', 'components/DeskAssignment.scss', 'components/DeskContainer';
 
 //IMPORT PAGES
 
-@import 'pages/App.scss', 'pages/Login.scss', 'pages/Home.scss','pages/UserManagement.scss', 'pages/BuildingManagement.scss', 'pages/Office.scss';
+@import 'pages/App.scss', 'pages/Login.scss', 'pages/Home.scss','pages/UserManagement.scss', 'pages/BuildingManagement.scss', 'pages/Office.scss','pages/User.scss', 'pages/Remotes.scss', 'pages/RemoteApproval.scss', 'pages/RequestRemote.scss';
 
 * {
     margin: 0;

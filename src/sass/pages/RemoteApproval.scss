@@ -1,0 +1,129 @@
+.approval-wrapper {
+    background-image: url('../../images/background2.png');
+    width: 80%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    
+
+    p {
+        color: #212934;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        margin-bottom: 20px;
+       
+        span {
+            color: #8895A7;
+        }
+    }
+
+    h1 {
+        @include primary-heading;
+        margin-bottom: 40px;
+    }
+
+    .remote-text {
+        padding: 20px;
+        width: 60%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #cfd6de;
+        border-radius: 10px;   
+        position: relative;
+        
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-bottom: 20px;
+
+            h4 {
+                @include text;
+                color: #212934;
+                margin-left: 10px;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            @include text;
+            color: #8895a7;
+            margin-bottom: 20px;
+        }
+    }
+
+    button {
+        outline: none;
+        color: #fff;
+        border: none;
+        background: #6EBC1A;    
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 17px;
+        width: 145px;
+        padding: 15px 40px;
+        margin: 35px 0;        
+    
+        &:hover {
+          background-color: #56a113;
+        }
+    
+        &:active {
+          color: #205a04;
+        }
+    }
+
+    p {
+        @include text;
+        color: #212934;
+        font-weight: 700;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        label {
+            @include text;
+            color: #212934;
+            margin-bottom: 10px;
+
+            span {
+                margin-left: 5px;
+                color: #8895A7;
+            }
+        }
+
+        textarea {
+            border: 1px solid #cfd6de;
+            border-radius: 10px;
+            padding: 15px 20px;
+        }
+
+        button {
+            outline: none;
+            color: #fff;
+            border: none;
+            background: $danger;    
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 17px;
+            width: 145px;
+            padding: 15px 40px;
+            margin: 35px 0;        
+        
+            &:hover {
+              background-color: #9f1e29;
+            }
+        
+            &:active {
+              color: #590824;
+            }
+        }
+    }    
+}

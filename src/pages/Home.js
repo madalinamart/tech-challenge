@@ -13,6 +13,12 @@ import EditOffice from '../Office/EditOffice'
 import OfficeStatus from '../Office/OfficeStatus'
 import Office from '../Office/Office'
 import DeskAssignment from '../Desk/DeskAssignment'
+import User from '../Users/User'
+import Remotes from '../Remote/Remotes'
+import ApproveRemote from '../Remote/ApproveRemote'
+import RequestRemote from '../Remote/RequestRemote'
+
+
 
 
 
@@ -37,6 +43,10 @@ const Home = () => {
       <Route exact path='/OfficeStatus' element={<OfficeStatus />} />
       <Route exact path='/Office/:id' element={<Office />} />
       <Route exact path='/DeskAssignment' element={<DeskAssignment />} />
+      <Route exact path='/Users' element={<User />} />
+      <Route exact path='/Remotes' element={<Remotes />} />
+      <Route exact path='/ApproveRemote/:id' element={<ApproveRemote />} />
+      <Route exact path='RequestRemote' element={<RequestRemote />} />
     </Routes>
     </div>
     </BrowserRouter>     

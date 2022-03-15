@@ -4,7 +4,8 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 40px;
-    width: 80%;
+    width: 100%;
+    height: 50%;
 
     p {
         @include inputs;
@@ -20,6 +21,16 @@
         @include primary-button{
             padding: 15px 55px;
         }
+    }
+
+    h2 {
+        @include subheading(#212934);
+        margin-top: 40px;
+    }
+
+    span {
+        color: $danger;
+        @include text;
     }
 
     form {

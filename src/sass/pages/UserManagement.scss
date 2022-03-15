@@ -89,8 +89,7 @@
       font-weight: 600;
       text-align: left;
       border-left: 1px solid #cfd6de;
-
-      tr {
+      tr {       
         th {            
           padding: 10px;
           border-right: 1px solid #cfd6de;
@@ -100,6 +99,17 @@
 
     tbody {
       tr {
+        &:first-child {
+          background-color: #F7FFE1;
+        
+          .table-icons {
+            display: none;
+
+            &:first-child {              
+              display: block;
+            }
+          }
+        }
         td {
           padding: 10px;
           color: #003098;
@@ -110,6 +120,7 @@
           border-left: 1px solid #cfd6de;      
         }
         .icons {
+          width: 100%;
           display: flex;
           flex-direction: row;
           

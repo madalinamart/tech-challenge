@@ -15,7 +15,7 @@ const Card = () => {
                 <img src={user} alt='user profile img' />
                 <h3>Alin Ionescu</h3>
                 <p>Administrator</p>
-            </div>  
+            </div> 
             <AdminFunctions />         
         </div>
     </div>
