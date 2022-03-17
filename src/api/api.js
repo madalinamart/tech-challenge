@@ -37,7 +37,7 @@ export const editBuilding = async(id,building) => {
 }
 
 export const deleteBuilding = async (id) => {
-    return await axios.delete(`${urlBuildings}`,id);
+    return await axios.delete(`${urlBuildings}/${id}`);
 }
 
 const urlOffices = `http://localhost:3006/offices`

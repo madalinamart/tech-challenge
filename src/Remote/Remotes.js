@@ -58,7 +58,7 @@ const Remotes = () => {
             }
           })
           .map((employee) => {
-            return !employee.remoteStatus === false ? (
+            return !employee.message === '' ? (
               <div className='request'>
                 <div className='title'>
                   <img src={profilePhoto} alt='user profile' />

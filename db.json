@@ -1,0 +1,46 @@
+{
+  "employees": [
+    {
+      "name": "Martiniuc Madalina",
+      "email": "madalina@gmail.com",
+      "role": "Office Administrator",
+      "gender": "Female",
+      "date": "1989-12-12",
+      "nationality": "IT",
+      "password": "1234567",
+      "id": 1
+    },
+    {
+      "name": "Alin Ionescu",
+      "email": "alin.ionescu@idesk.com",
+      "role": "Administrator",
+      "gender": "Male",
+      "date": "1996-01-10",
+      "nationality": "RO",
+      "password": "ciaociao",
+      "image": "",
+      "id": 2
+    }
+  ],
+  "buildings": [
+    {
+      "name": "Main Building",
+      "address": "Strada Principala 117 Suceava",
+      "floors": 0,
+      "id": 2
+    }
+  ],
+  "offices": [
+    {
+      "name": "New Office 24",
+      "building": "Building A1",
+      "floor": "2",
+      "totalDesks": 6,
+      "usableDesks": 11,
+      "administrator": "Madalina Martiniuc",
+      "usedDesks": 0,
+      "users": [],
+      "id": 5
+    }
+  ]
+}
